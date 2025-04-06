@@ -1,0 +1,15 @@
+a{
+    text-decoration: none;
+    color: white;
+}
+  mat-sidenav{
+    width: 250px;
+   
+  }
+  a:hover{
+    color: #CDE8E5;
+  }
+ 
+  
+ 
+ 

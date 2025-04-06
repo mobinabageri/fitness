@@ -1,0 +1,18 @@
+<mat-toolbar>
+        
+    <a mat-icon-button  class=" text-light " aria-label="Example icon-button with menu icon" (click)="sidebartoggle()" fxHide.gt-sm="">
+      <mat-icon>menu</mat-icon>
+    </a>
+    
+    
+   
+       <mat-list fxFlex fxLayout fxLayoutAlign="flex-end"  fxLayoutGap="20px" fxHide.xs="">
+        <mat-nav-item *ngIf="!isAuth" routerLink="signup" mat-icon-button><mat-icon>person_add</mat-icon></mat-nav-item>
+        <mat-nav-item *ngIf="!isAuth" routerLink="login" mat-icon-button><mat-icon>login</mat-icon></mat-nav-item>
+        <mat-nav-item *ngIf="isAuth" routerLink="" mat-icon-button  (click)="logute()"><mat-icon>login</mat-icon></mat-nav-item>
+        <mat-nav-item *ngIf="isAuth" routerLink="trining" mat-icon-button><mat-icon>home</mat-icon></mat-nav-item>
+
+       </mat-list>
+
+  </mat-toolbar>
+  

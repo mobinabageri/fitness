@@ -1,0 +1,19 @@
+section{
+    width: 33%;
+    text-align: center;
+  height: 200px;
+ 
+}
+div{
+    height: 600px;
+    padding: 20px;
+}
+.section1{
+    background-color: #CDE8E5;
+}
+.section2{
+    background-color: #7AB2B2;
+}
+.section3{
+    background-color: #4D869C;
+}

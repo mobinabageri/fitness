@@ -1,0 +1,10 @@
+a:hover{
+    color: #CDE8E5;
+  }
+  a{
+    text-decoration: none;
+    color: white;
+}
+mat-toolbar{
+    background-color:#4D869C;
+  }

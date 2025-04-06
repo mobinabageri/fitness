@@ -1,0 +1,8 @@
+<mat-nav-list>
+        <mat-list>
+                <mat-list-item *ngIf="!isAuth" routerLink="signup" mat-icon-button><mat-icon>person_add</mat-icon></mat-list-item>
+                <mat-list-item *ngIf="!isAuth" routerLink="login" mat-icon-button><mat-icon>login</mat-icon></mat-list-item>
+                <mat-list-item *ngIf="isAuth" routerLink="login" mat-icon-button  (click)="logute()"><mat-icon>loguot</mat-icon></mat-list-item>
+                <mat-list-item *ngIf="isAuth" routerLink="login" mat-icon-button><mat-icon>home</mat-icon></mat-list-item>
+               </mat-list>
+   </mat-nav-list>

@@ -1,0 +1,45 @@
+<div>
+  <mat-form-field>
+    <mat-label>فیلتر</mat-label>
+    <input type="text" matInput (keyup)="filtertable($event)">
+  </mat-form-field>
+</div>
+ 
+ <table mat-table [dataSource]="datasource" class="mat-elevation-z8" matSort>
+
+ 
+  
+   
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef  mat-sort-header> عنوان </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="duration">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> مدت زمان </th>
+      <td mat-cell *matCellDef="let element"> {{element.duration}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="calories">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> کالری </th>
+      <td mat-cell *matCellDef="let element"> {{element.calories}} </td>
+    </ng-container>
+  
+
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> تاریخ </th>
+      <td mat-cell *matCellDef="let element"> {{element.date | persianDate}} </td>
+    </ng-container>
+    <ng-container matColumnDef="state">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> وضعیت </th>
+        <td mat-cell *matCellDef="let element"> {{element.state | translation}} </td>
+      </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <mat-paginator [pageSizeOptions]="[1,5, 10, 20]"
+  showFirstLastButtons
+  aria-label="Select page of periodic elements">
+</mat-paginator>
+                  
