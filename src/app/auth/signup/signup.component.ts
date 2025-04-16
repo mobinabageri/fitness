@@ -1,11 +1,12 @@
-import {ChangeDetectionStrategy, Component, signal} from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnDestroy, OnInit, signal} from '@angular/core';
 import { NgForm } from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import { AuthService } from '../auth.service';
-
+import { UIservice } from '../../shared/UI.service';
+import {  subscribeOn, Subscription } from 'rxjs';
 // interface User{
 //   id:number
 //   fullname:string,
@@ -20,13 +21,22 @@ import { AuthService } from '../auth.service';
   styleUrl: './signup.component.css',
   
 })
-export class SignupComponent {
+export class SignupComponent implements OnInit,OnDestroy {
 
-
-constructor(private authservice:AuthService){
+  isLoading:boolean=false;
+  loadingsub!:Subscription;
+constructor(private authservice:AuthService,private uiservice:UIservice){
   
 }
+  ngOnDestroy(): void {
+  this.loadingsub.unsubscribe()
+  }
 
+ngOnInit(): void {
+this.loadingsub=  this.uiservice.loading.subscribe((isload)=>{
+    this.isLoading=isload;
+  })
+}
 
   hide = signal(true);
   clickEvent(event: MouseEvent) {

@@ -25,6 +25,12 @@ import { PersianDatePipe } from './persian-date.pipe';
 import { TranslationPipe } from './translation.pipe';
 import { MatPaginatorIntl } from '@angular/material/paginator';
 import { paginatorTranslite } from './paginator.translite';
+import { AngularFireModule} from '@angular/fire/compat';
+import {evnironment} from '../evnironment/evnironment';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { UIservice } from './shared/UI.service';
+import { AddTrainingComponent } from './add-training/add-training.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +46,7 @@ import { paginatorTranslite } from './paginator.translite';
     StopTriningComponent,
     PersianDatePipe,
     TranslationPipe,
+    AddTrainingComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,15 +54,17 @@ import { paginatorTranslite } from './paginator.translite';
     meterialmodule,
     FlexLayoutModule,
     FormsModule,
-   BrowserAnimationsModule
-    
-
+   BrowserAnimationsModule,
+   AngularFireModule.initializeApp(evnironment.firebase),
+   AngularFireAuthModule
   ],
   providers: [{provide:MatPaginatorIntl,useClass:paginatorTranslite},
     provideAnimationsAsync(),
     {provide:DateAdapter,useClass:MaterialPersianDateAdapter,deps:[MAT_DATE_LOCALE]},
-    {provide:MAT_DATE_FORMATS,useValue:PERSIAN_DATE_FORMATS},AuthService,TrainingService
+    {provide:MAT_DATE_FORMATS,useValue:PERSIAN_DATE_FORMATS},AuthService,TrainingService,UIservice
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+
+}

@@ -1,5 +1,6 @@
 export interface trining{
-id:number,
+id:string,
+userId?:string,
 name:string,
 duration:number,
 calories:number,

@@ -28,7 +28,8 @@
           </mat-form-field>
           
                  
-          <button mat-raised-button  type="submit"  [disabled]="f.invalid">ثبت</button>
+          <button mat-raised-button  type="submit"  [disabled]="f.invalid" *ngIf="!isLoading">ورود</button>
+        <mat-spinner *ngIf="isLoading"></mat-spinner>
     </form>
 </section>
 

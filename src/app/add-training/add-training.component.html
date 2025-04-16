@@ -1,0 +1,27 @@
+
+<form fxLayout="column" fxLayoutAlign="center center"  fxLayoutGap="10px" #f="ngForm" (ngSubmit)="addTraining(f)" class="mt-5 pt-5">
+    <mat-form-field>
+        <mat-label>نام تمرین :</mat-label>
+
+        <input type="text" matInput  required ngModel name="name" >
+        <mat-error>نام تمرین نمی تواند خالی باشد</mat-error>
+       </mat-form-field>
+       <mat-form-field>
+        <mat-label>مدت زمان تمرین را به ثانیه وارد کنید :</mat-label>
+
+        <input type="text" matInput  required ngModel name="duration" >
+        <mat-error>زمان تمرین نمی تواند خالی باشد </mat-error>
+
+       </mat-form-field>
+       <mat-form-field>
+        <mat-label>کالری تمرین را وارد کنید</mat-label>
+
+        <input type="text" matInput  required ngModel name="calories" >
+        <mat-error>کالری تمرین نمی تواند خالی باشد</mat-error>
+
+       </mat-form-field>
+        
+       <button mat-raised-button  type="submit"  [disabled]="f.invalid" >افزودن تمرین </button>
+
+
+</form>

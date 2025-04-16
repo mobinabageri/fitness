@@ -1,6 +1,8 @@
 <mat-tab-group *ngIf="!startNewTrining">
     <mat-tab label="تمرین های جدید "> <app-new-trining ></app-new-trining> </mat-tab>
     <mat-tab label="تمرین های قبلی"> <app-past-trining></app-past-trining> </mat-tab>
+    <mat-tab label="افزودن تمرین"> <app-add-training></app-add-training> </mat-tab>
+
   </mat-tab-group>
   <app-current-trining *ngIf="startNewTrining" ></app-current-trining>
   

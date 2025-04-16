@@ -48,8 +48,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "1.2mb",
-                  "maximumError": "1.5mb"
+                  "maximumWarning": "2mb",
+                  "maximumError": "2mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -98,7 +98,6 @@
             ],
             "styles": [ "src/styles.css",
               "@angular/material/prebuilt-themes/azure-blue.css",
-             
               "./node_modules/bootstrap/dist/css/bootstrap.min.css"
 
             ],

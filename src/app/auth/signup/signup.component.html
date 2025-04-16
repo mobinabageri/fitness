@@ -39,9 +39,11 @@
                 <mat-datepicker #picker></mat-datepicker>
               </mat-form-field>
               
-              <mat-checkbox ngmodel required>با شرایط و ضوابط موافقم.</mat-checkbox>   
+              <mat-checkbox ngmodel required >با شرایط و ضوابط موافقم.</mat-checkbox>   
                      
-              <button mat-raised-button  type="submit"  [disabled]="f.invalid">ثبت</button>
+              <button mat-raised-button  type="submit"  [disabled]="f.invalid" *ngIf="!isLoading">ثبت</button>
+              <mat-spinner *ngIf="isLoading"></mat-spinner>
+
         </form>
     </section>
    
